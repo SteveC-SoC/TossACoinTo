@@ -19,16 +19,13 @@ function Coin() {
 
   return (
     <div className="CoinFace">
-      <div>
-        <div className="SideA">
-          <h2>TAILS</h2>
-        </div>
-        <div className="SideB">
-          <h2>HEAD</h2>
-        </div>
-      </div>
 
       <h1>Flip a coin</h1>
+      <div>
+      {/* this will show the face depending on the result of the CoinToss
+      while this works it looks rubbish */}
+        <h2>{face}</h2>
+      </div>
 
       <button id="btn" onClick={CoinToss}>
         Coin Toss
