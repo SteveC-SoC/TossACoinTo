@@ -17,7 +17,7 @@ function Button ({ setFace }){
 
 
     return(
-        <button id="btn" onClick={CoinToss}>
+        <button onClick={CoinToss}>
         Coin Toss
       </button>
     )
