@@ -1,21 +1,10 @@
 import React, { useState } from "react";
+import Button from '../Button';
 
 function Coin() {
   //using State to keep track of the coin face
   const [face, setFace] = useState(" ");
-  // a onClick function to decide if the coin shows heads or tails
-  function CoinToss() {
-    //setFace depending on outcome of a Math.random, 50/50 chance
-    setFace(() => {
-      if (Math.random() < 0.5) {
-        setFace("heads");
-        console.log("heads");
-      } else {
-        setFace("tails");
-        console.log("tails");
-      }
-    });
-  }
+  
 
   return (
     <div className="CoinFace">
@@ -26,10 +15,9 @@ function Coin() {
       while this works it looks rubbish */}
         <h2>{face}</h2>
       </div>
-
-      <button id="btn" onClick={CoinToss}>
-        Coin Toss
-      </button>
+      {/* I am passing down setFace to the button as this is changed on the onClick */}
+      <Button setFace={setFace}/>
+     
     </div>
   );
 }
