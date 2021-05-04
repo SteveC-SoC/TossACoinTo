@@ -10,5 +10,7 @@ This was part of an idea back in SoC that we couldn't figure out how to code and
 ## progress  
 Function created to display heads or tails on click of button ✔  
 Move into seperate components ✔  
-Set player move
+Set player move ✔  
+Soreboard  
+Decide if player wins, does selection match result - will need to pull state up higher so this can be accessed by all
 

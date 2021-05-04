@@ -1,15 +1,15 @@
 
 // moved the Button to its own component
-function Button ({ setFace }){
+function Button ({ setcoinFace }){
 
     function CoinToss() {
         //setFace depending on outcome of a Math.random, 50/50 chance
-        setFace(() => {
+        setcoinFace(() => {
           if (Math.random() < 0.5) {
-            setFace("heads");
+            setcoinFace("heads");
             console.log("heads");
           } else {
-            setFace("tails");
+            setcoinFace("tails");
             console.log("tails");
           }
         });
