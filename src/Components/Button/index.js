@@ -1,23 +1,30 @@
 
 // moved the Button to its own component
-function Button ({ setcoinFace }){
+function Button ( { coinFace, setcoinFace, winner } ){
 
     function CoinToss() {
         //setFace depending on outcome of a Math.random, 50/50 chance
         setcoinFace(() => {
           if (Math.random() < 0.5) {
-            setcoinFace("heads");
-            console.log("heads");
+            setcoinFace('heads')
+            console.log({coinFace})
+            
           } else {
-            setcoinFace("tails");
-            console.log("tails");
+            setcoinFace('tails')
+            console.log({coinFace})
           }
+         
         });
       }
 
+     function runFunction(){
+      CoinToss()
+      winner()
+     }
+
 
     return(
-        <button onClick={CoinToss}>
+        <button onClick={runFunction}>
         Coin Toss
       </button>
     )

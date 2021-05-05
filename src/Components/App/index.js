@@ -1,22 +1,45 @@
-import React, { useState } from 'react';
-import './App.css';
-import Coin from '../Coin';
-import Player from '../Player';
-import ScoreBoard from '../Scoreboard';
+import React, { useState } from "react";
+import "./App.css";
+import Coin from "../Coin";
+import Player from "../Player";
+import Purse from "../Purse";
 
 function App() {
   //using State to keep track of the coin face
   const [coinFace, setcoinFace] = useState(" ");
-  // using State to set the radio button, which start as false
-  const [PlayerChoice, setPlayerChoice] = useState(false);
+  let [purse, setpurse] = useState(2);
 
-  return (
+   /*in order to have the two radio buttons change (only one active at a time), I use a onChange function.
+     I pass the event into the function 
+    */
+  const [playerChoice, setPlayerChoice] = useState(false);
+
+  function playerSelect(e) {
+    //this in conjunction with the checked= sets one to checked and the other to unchecked
+    
+    return setPlayerChoice(e.target.value);
+  }
+
+  function winner() {
+    //
+    setpurse(() => {
+      if (playerChoice === coinFace) {
+        setpurse(purse++);
+        console.log('increase');
+        
+      } else {
+        setpurse(purse--);
+        console.log('decrease');
+      }
+     
+    });
+  }
+
+    return (
     <div className="App">
-      <Player setPlayerSelect={setPlayerChoice}/>
-      <Coin coinFace={coinFace} setcoinFace={setcoinFace} PlayerChoice={PlayerChoice} setPlayerChoice={setPlayerChoice} />
-      <ScoreBoard coinFace={coinFace} PlayerChoice={PlayerChoice}/>
-
-      
+      <Player playerChoice={playerChoice} playerSelect={playerSelect}/>
+      <Coin coinFace={coinFace} setcoinFace={setcoinFace} winner={winner}/>
+      <Purse purse={purse} coinFace={coinFace} playerChoice={playerChoice}/>
     </div>
   );
 }
