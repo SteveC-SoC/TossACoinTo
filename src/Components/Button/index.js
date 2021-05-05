@@ -1,8 +1,9 @@
-
+import { useEffect } from 'react';
 // moved the Button to its own component
 function Button ( { coinFace, setcoinFace, winner } ){
 
-    function CoinToss() {
+    useEffect(() => {
+      // function CoinToss() {
         //setFace depending on outcome of a Math.random, 50/50 chance
         setcoinFace(() => {
           if (Math.random() < 0.5) {
@@ -13,18 +14,22 @@ function Button ( { coinFace, setcoinFace, winner } ){
             setcoinFace('tails')
             console.log({coinFace})
           }
-         
-        });
-      }
+          
+        })}
+    }, [runFunctions])
+      
+      
 
-     function runFunction(){
-      CoinToss()
+    
+//this calls the two functions I want ran when button is clicked
+     function runFunctions(){
+      // CoinToss()
       winner()
      }
 
 
     return(
-        <button onClick={runFunction}>
+        <button onClick={runFunctions} value='submit'>
         Coin Toss
       </button>
     )

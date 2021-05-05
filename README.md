@@ -12,7 +12,8 @@ Function created to display heads or tails on click of button ✔
 Move into seperate components ✔  
 Set player move ✔  
 Soreboard  
-Decide if player wins, does selection match result - will need to pull state up higher so this can be accessed by all ✔
+Decide if player wins, does selection match result - will need to pull state up higher so this can be accessed by all ✔  
+correct setState as this is currently on move behind
 
 ## Problems/Stuck
 Radio buttons work slightly differently in React  
@@ -20,4 +21,5 @@ React docs shows that I cannot return false in React and to that I need to call 
 
 Running multiple functions onClick, this needs to be inside a seperate function that calls the functions you want ran onClick, see Button component  
 
-There is a delay in the coinface being updated which is affecteing the results, it is one move behind
+There is a delay in the coinface being updated which is affecteing the results, it is one move behind  
+Checked Stack and a call to setState isn't synchronous. It creates a "pending state transition." I need to explicitly pass the new input value as part of the event being raised

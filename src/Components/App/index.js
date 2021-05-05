@@ -7,6 +7,7 @@ import Purse from "../Purse";
 function App() {
   //using State to keep track of the coin face
   const [coinFace, setcoinFace] = useState(" ");
+  //does not like me having this as a const, not sure why, changing to let works but does this affect the useState
   let [purse, setpurse] = useState(2);
 
    /*in order to have the two radio buttons change (only one active at a time), I use a onChange function.
@@ -37,6 +38,7 @@ function App() {
 
     return (
     <div className="App">
+      <h2>Pick</h2>
       <Player playerChoice={playerChoice} playerSelect={playerSelect}/>
       <Coin coinFace={coinFace} setcoinFace={setcoinFace} winner={winner}/>
       <Purse purse={purse} coinFace={coinFace} playerChoice={playerChoice}/>
