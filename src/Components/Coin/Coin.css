@@ -1,0 +1,49 @@
+:root {
+    --primary: #FFCE00;
+    --secondary: #FE4880;
+    --dark: #212121;
+    --light: #F3f3f3;
+}
+
+
+* {
+    margin: 0;
+    paddin: 0;
+}
+
+.coin{
+    margin: 100px auto;
+    width: 400px;
+    height: 600px;
+}
+
+.coinInner{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.coinInnerIsFlipped{
+    transform:rotateY(180deg);
+}
+
+.coinFace{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16;
+    box-shadow: 0px 3px 18px 3px rgb(0, 0, 0.2)
+}
+
+.coinFaceHeads{
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -13,7 +13,9 @@ Move into seperate components ✔
 Set player move ✔  
 Soreboard  
 Decide if player wins, does selection match result - will need to pull state up higher so this can be accessed by all ✔  
-correct setState as this is currently on move behind
+Correct setState as this is currently on move behind  
+animate the coin flip 🤔
+CSS  
 
 ## Problems/Stuck
 Radio buttons work slightly differently in React  
@@ -23,3 +25,5 @@ Running multiple functions onClick, this needs to be inside a seperate function 
 
 There is a delay in the coinface being updated which is affecteing the results, it is one move behind  
 Checked Stack and a call to setState isn't synchronous. It creates a "pending state transition." I need to explicitly pass the new input value as part of the event being raised
+
+Coin flip - stuck on this, have found a tutorial for a card flip which I should be able to translate into this app
