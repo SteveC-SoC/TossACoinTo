@@ -1,4 +1,4 @@
-function Purse({ purse, coinFace, playerChoice }) {
+function Purse({ purse, coinFace, playerChoiceHeads }) {
   /*the player starts with 2 coins, if they win the coin count increases, if they loose the coin count decreases
     if the coin count == 0, game over, if coin count reaches 6 game won*/
 
